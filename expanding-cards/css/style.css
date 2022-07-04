@@ -1,0 +1,66 @@
+/* 使用googleapis */
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+/* 全局 盒模型 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  display: flex; /* 弹性项目 */
+  align-items: center; /* 居中对齐 */
+  justify-content: center; /* 在容器中央对齐弹性项目 */
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  display: flex; /* div容器中弹性项目 */
+  width: 90vw;
+}
+
+.panel {
+  background-size: cover; /* 把背景图像扩展至足够大，以使背景图像完全覆盖背景区域。 */
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px; /* 边框圆角 */
+  color: #fff;
+  cursor: pointer; /* 光标呈现为指示链接的指针（一只手） */
+  flex: 0.5; /* 弹性项目的长度 */
+  margin: 10px; /* 外边框 */
+  position: relative; /* 生成相对定位的元素，相对于其正常位置进行定位。*/
+  -webkit-transition: all 500ms ease-in; /* 网络工具包(已弃用) */
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute; /* 绝对定位 */
+  bottom: 20px; /* 把图像的底边缘设置在其包含元素底边缘之上 20 像素高的位置 */
+  left: 20px;
+  margin: 0;
+  opacity: 0; /* 设置 div 元素的不透明级别 */
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s; /* 把鼠标指针放到 div 元素上，过渡速度会从 0.3s 逐渐变为 0.4s */
+}
+
+/* 如果浏览器的宽度为 480px 或更小时 */
+@media (max-width: 480px) {
+  .container {
+    width: 100vw; /* vh 当前屏幕可见高度的1% vw 就是当前屏幕宽度的1% */
+  }
+
+  .panel:nth-of-type(4), /* 选择器匹配属于父元素的特定类型的第 N 个子元素 */
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
