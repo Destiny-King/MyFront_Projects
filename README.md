@@ -15,3 +15,5 @@
 7.blurry-loading：50 Projects in 50 Days fifth
 
 8.scroll-animation：50 Projects in 50 Days sixth
+
+9.split-landing-page：50 Projects in 50 Days seventh
